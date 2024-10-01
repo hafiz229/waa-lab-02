@@ -1,0 +1,41 @@
+### Get All books
+GET http://localhost:8080/books
+
+### Get All books (Custom Header Versioning)
+GET http://localhost:8080/books
+X-API-VERSION: 2
+
+### Get All books (URI Versioning)
+GET http://localhost:8080/books/v1
+
+### Get a book by id (Media Type Versioning)
+GET http://localhost:8080/books/1
+Accept: application/cs.miu.edu-v2+json
+
+### Get a book by id (Request Parameter Versioning)
+GET http://localhost:8080/books?id=1&version=1
+
+### Add a new book
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "id": 4,
+  "title": "Dark Horse",
+  "isbn": "4444",
+  "price": 340.0
+}
+
+### Update an existing book
+PUT http://localhost:8080/books/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Cyclone Part I",
+  "isbn": "5555",
+  "price": 333
+}
+
+### Delete a book
+DELETE http://localhost:8080/books/1
